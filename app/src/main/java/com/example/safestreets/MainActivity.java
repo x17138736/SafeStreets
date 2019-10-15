@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Info = (TextView)findViewById(R.id.tvInfo);
         Login = (Button)findViewById(R.id.btnLogin);
 
-        Info.setText("No of attempts remaining: 5");
+        Info.setText("No of attempts remaining: 3");
 
         Login.setOnClickListener(new View.OnClickListener() {
         @Override
