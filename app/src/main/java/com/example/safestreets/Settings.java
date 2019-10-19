@@ -11,6 +11,7 @@ public class Settings extends AppCompatActivity {
 
     private Button Contacts;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
