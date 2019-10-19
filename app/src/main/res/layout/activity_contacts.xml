@@ -7,10 +7,18 @@
     tools:context=".Contacts">
 
     <TextView
-        android:id="@+id/textViewC1"
-        android:layout_width="426dp"
-        android:layout_height="480dp"
-        android:text="CONTACTS PAGE IS WORKING !!!!!!!!!!!!!!!!!!!!!"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="-60dp" />
+        android:id="@+id/textViewContacts1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:text="E-Mail Us:                                                                                         Owen Thompson x17516666                                    "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
