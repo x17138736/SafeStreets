@@ -10,8 +10,6 @@ import android.widget.Button;
 public class Settings extends AppCompatActivity {
 
     private Button Contacts;
-    private Button TermsOfService;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +32,7 @@ public class Settings extends AppCompatActivity {
         startActivity(intent);
 
 
-        TermsOfService = findViewById(R.id.btnTermsOfService);
-        TermsOfService.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openTermsOfService();
-            }
-        });
-
     }
 
-    public void openTermsOfService() {
-        Intent intent = new Intent(this, TermsOfService.class);
-        startActivity(intent);
 
-
-    }
 }
