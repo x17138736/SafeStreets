@@ -9,32 +9,30 @@ import android.widget.Button;
 
 public class Settings extends AppCompatActivity {
 
-private Button Contacts;
+    private Button Contacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Contacts=(Button) findViewById(R.id.btnContactsPage);
+        Contacts = findViewById(R.id.btnContactsPage);
         Contacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openContacts();
             }
         });
+
+
     }
+
     public void openContacts() {
-        Intent intent=new Intent(this, SafeStreetMap.class);
+        Intent intent = new Intent(this, Contacts.class);
         startActivity(intent);
 
 
     }
-
-
-
-
-
 
 
 }
