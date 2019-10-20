@@ -11,6 +11,7 @@ public class Settings extends AppCompatActivity {
 
     private Button Contacts;
     private Button TermsOfService;
+    private Button SignOut;
 
 
     @Override
@@ -48,6 +49,22 @@ public class Settings extends AppCompatActivity {
         Intent intent = new Intent(this, TermsOfService.class);
         startActivity(intent);
 
+
+        SignOut = findViewById(R.id.btnSignOut);
+        SignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+
+            }
+        });
+
+
+    }
+
+    public void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 }
