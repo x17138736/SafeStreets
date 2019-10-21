@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SecondActivity extends AppCompatActivity {
 
     private Button SafeStreetMap;
@@ -15,6 +17,8 @@ public class SecondActivity extends AppCompatActivity {
     private Button Forum;
     private Button Settings;
     private TextView Info1;
+    private FirebaseAuth firebaseAuth;
+    private Button logout;
 
 
     @Override
@@ -30,26 +34,27 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
-       public void openSafeStreetMap() {
-           Intent intent=new Intent(this, SafeStreetMap.class);
-           startActivity(intent);
+
+    public void openSafeStreetMap() {
+        Intent intent=new Intent(this, SafeStreetMap.class);
+        startActivity(intent);
 
 
-           RouteMaker=(Button) findViewById(R.id.btnRouteMaker);
-           RouteMaker.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   openRouteMaker();
-               }
-           });
-       }
-        public void openRouteMaker() {
-            Intent intent = new Intent(this, RouteMaker.class);
-            startActivity(intent);
+        RouteMaker=(Button) findViewById(R.id.btnRouteMaker);
+        RouteMaker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRouteMaker();
+            }
+        });
+    }
+
+    public void openRouteMaker() {
+        Intent intent=new Intent(this, RouteMaker.class);
+        startActivity(intent);
 
 
-
-        Forum = (Button) findViewById(R.id.btnForum);
+        Forum=(Button) findViewById(R.id.btnForum);
         Forum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +62,9 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
+
     public void openForum() {
-        Intent intent = new Intent(this, Forum.class);
+        Intent intent=new Intent(this, Forum.class);
         startActivity(intent);
 
         Settings=(Button) findViewById(R.id.btnSettings);
@@ -69,13 +75,30 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
-        public void openSettings(){
-            Intent intent = new Intent(this, Settings.class);
-            startActivity(intent);
 
+    public void openSettings() {
+        Intent intent=new Intent(this, Settings.class);
+        startActivity(intent);
 
+        firebaseAuth=FirebaseAuth.getInstance();
 
-    Info1 = (TextView)findViewById(R.id.tvInfo1);
+        logout=(Button) findViewById(R.id.btnLogout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Logout();
+            }
+        });
+    }
+
+    private void Logout() {
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(SecondActivity.this, MainActivity.class));
+
+        Info1=(TextView) findViewById(R.id.tvInfo1);
 
     }
 }
+
+
