@@ -50,8 +50,8 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void openRouteMaker() {
-        Intent intent=new Intent(this, RouteMaker.class);
-        startActivity(intent);
+        Intent RouteMaker=new Intent(this, RouteMaker.class);
+        startActivity(RouteMaker);
 
 
         Forum=(Button) findViewById(R.id.btnForum);
