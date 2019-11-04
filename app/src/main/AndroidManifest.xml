@@ -46,6 +46,8 @@
         <activity android:name=".Forum" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".SecondActivity" />
+        <activity android:name=".Contacts" />
+        <activity android:name=".TermsOfService" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
