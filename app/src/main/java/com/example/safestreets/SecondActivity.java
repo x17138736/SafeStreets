@@ -27,62 +27,41 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         SafeStreetMap=(Button) findViewById(R.id.btnSafeStreetMap);
+        RouteMaker=(Button) findViewById(R.id.btnRouteMaker);
+        Forum=(Button) findViewById(R.id.btnForum);
+        Settings=(Button) findViewById(R.id.btnSettings);
+        logout=(Button) findViewById(R.id.btnLogout);
+
         SafeStreetMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSafeStreetMap();
             }
         });
-    }
 
-    public void openSafeStreetMap() {
-        Intent intent=new Intent(this, SafeStreetMap.class);
-        startActivity(intent);
-
-
-        RouteMaker=(Button) findViewById(R.id.btnRouteMaker);
         RouteMaker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRouteMaker();
             }
         });
-    }
 
-    public void openRouteMaker() {
-        Intent RouteMaker=new Intent(this, RouteMaker.class);
-        startActivity(RouteMaker);
-
-
-        Forum=(Button) findViewById(R.id.btnForum);
         Forum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openForum();
             }
         });
-    }
 
-    public void openForum() {
-        Intent intent=new Intent(this, Forum.class);
-        startActivity(intent);
-
-        Settings=(Button) findViewById(R.id.btnSettings);
         Settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSettings();
             }
         });
-    }
-
-    public void openSettings() {
-        Intent intent=new Intent(this, Settings.class);
-        startActivity(intent);
 
         firebaseAuth=FirebaseAuth.getInstance();
 
-        logout=(Button) findViewById(R.id.btnLogout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,14 +70,40 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    private void Logout() {
-        firebaseAuth.signOut();
-        finish();
-        startActivity(new Intent(SecondActivity.this, MainActivity.class));
+        private void openSafeStreetMap () {
+            Intent intent=new Intent(SecondActivity.this, SafeStreetMap.class);
+            startActivity(intent);
 
-        Info1=(TextView) findViewById(R.id.tvInfo1);
+        }
+        private void openRouteMaker () {
+            Intent intent=new Intent(SecondActivity.this, RouteMaker.class);
+            startActivity(intent);
 
+        }
+
+        private void openForum () {
+            Intent intent=new Intent(SecondActivity.this, Forum.class);
+            startActivity(intent);
+
+        }
+
+        private void openSettings() {
+            Intent intent=new Intent(SecondActivity.this, Settings.class);
+            startActivity(intent);
+
+        }
+
+        private void Logout () {
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(SecondActivity.this, MainActivity.class));
+
+            Info1=(TextView) findViewById(R.id.tvInfo1);
+
+
+        }
     }
-}
+
+
 
 
