@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "786828089190",
+    "firebase_url": "https://streetsafe-app.firebaseio.com",
+    "project_id": "streetsafe-app",
+    "storage_bucket": "streetsafe-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786828089190:android:68e37d4895ed439cbe9aa7",
+        "android_client_info": {
+          "package_name": "com.example.safestreets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786828089190-79rae259lrvj9j2nivlgccu2i8u5j7rk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.safestreets",
+            "certificate_hash": "7d428bf10aa450f03f25e2264a64ddfac51359cf"
+          }
+        },
+        {
+          "client_id": "786828089190-4h1a8fdifgmupg7o0f4b69qc018a4c4q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh-KloQc2CbeCjXfoV7CzQbpJtWgEs0II"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786828089190-4h1a8fdifgmupg7o0f4b69qc018a4c4q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
