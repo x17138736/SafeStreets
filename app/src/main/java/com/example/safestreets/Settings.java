@@ -19,10 +19,25 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         Contacts = (Button) findViewById(R.id.btnContactsPage);
+        TermsOfService = (Button) findViewById(R.id.btnToS);
+        SignOut = (Button) findViewById(R.id.btnSignOut);
+
         Contacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openContacts();
+            }
+        });
+        TermsOfService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTermsOfService();
+            }
+        });
+        SignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
             }
         });
     }
@@ -31,13 +46,8 @@ public class Settings extends AppCompatActivity {
         Intent intent = new Intent(this, Contacts.class);
         startActivity(intent);
 
-        TermsOfService = (Button) findViewById(R.id.btnToS);
-        TermsOfService.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openTermsOfService();
-            }
-        });
+
+
     }
 
     public void openTermsOfService() {
@@ -45,13 +55,8 @@ public class Settings extends AppCompatActivity {
         startActivity(intent);
 
 
-        SignOut = (Button) findViewById(R.id.btnSignOut);
-        SignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMainActivity();
-            }
-        });
+
+
 
 
     }
