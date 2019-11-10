@@ -110,5 +110,10 @@ public class MainActivity extends AppCompatActivity {
                 firebaseAuth.signOut();
             }
         }
+
+    @Override
+    public void onBackPressed() {
+
+    }
     }
 
