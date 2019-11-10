@@ -42,18 +42,21 @@
         <activity
             android:name=".RouteMaker"
             android:label="@string/title_activity_route_maker" />
-        <activity android:name=".Settings" />
+        <activity android:name=".Settings"/>
         <activity android:name=".Forum" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".Contacts" />
-        <activity android:name=".TermsOfService" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SecondActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Contacts" />
+        <activity android:name=".TermsOfService" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

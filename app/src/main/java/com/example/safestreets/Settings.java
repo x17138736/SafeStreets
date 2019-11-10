@@ -45,30 +45,21 @@ public class Settings extends AppCompatActivity {
     public void openContacts() {
         Intent intent = new Intent(this, Contacts.class);
         startActivity(intent);
-
-
-
     }
-
     public void openTermsOfService() {
         Intent intent = new Intent(this, TermsOfService.class);
         startActivity(intent);
-
-
-
-
-
-
     }
-
     public void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+
+
     @Override
     public void onBackPressed() {
-        //to nothing       }
+
     }
 
 }
