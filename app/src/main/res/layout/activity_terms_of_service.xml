@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TermsOfService">
+    tools:context=".TermsOfService"
+    android:background="@drawable/backgroundgradient">
 
     <TextView
         android:id="@+id/textViewContacts3"
