@@ -9,16 +9,21 @@
 
     <Button
         android:id="@+id/btnAbout"
-        android:layout_width="300dp"
-        android:layout_height="65dp"
+        android:layout_width="312dp"
+        android:layout_height="94dp"
+        android:bottomLeftRadius="50dp"
+        android:bottomRightRadius="500dp"
+        android:drawableLeft="@drawable/ic_about"
         android:text="ABOUT US"
+        android:background="@android:color/transparent"
         android:textSize="18sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btnContactsPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <Switch
         android:id="@+id/switch_notification"
@@ -48,8 +53,9 @@
 
     <Button
         android:id="@+id/btnContactsPage"
-        android:layout_width="300dp"
-        android:layout_height="65dp"
+        android:layout_width="303dp"
+        android:layout_height="88dp"
+        android:background="@android:color/transparent"
         android:drawableLeft="@drawable/ic_contact"
         android:text="Contacts"
         android:textSize="18sp"
@@ -62,8 +68,9 @@
 
     <Button
         android:id="@+id/btnToS"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="299dp"
+        android:layout_height="92dp"
+        android:background="@android:color/transparent"
         android:drawableLeft="@drawable/ic_terms"
         android:text="Terms of Service"
         android:textSize="18sp"
@@ -76,14 +83,15 @@
 
     <Button
         android:id="@+id/btnSignOut"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="176dp"
+        android:layout_height="68dp"
+        android:background="@android:color/transparent"
         android:drawableLeft="@drawable/ic_signout"
         android:text="Sign Out"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.909" />
