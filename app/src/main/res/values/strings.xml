@@ -2,4 +2,13 @@
     <string name="app_name">SafeStreets</string>
     <string name="title_activity_safe_street_map">Map</string>
     <string name="title_activity_route_maker">Map</string>
+    <string name="email">Email</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="no_of_incorrect_attempts">No of incorrect attempts:</string>
+    <string name="signup">SignUp</string>
+    <string name="forgot_password">Forgot Password</string>
+
+
 </resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "750369860383",
+    "firebase_url": "https://safestreets-e31ea.firebaseio.com",
+    "project_id": "safestreets-e31ea",
+    "storage_bucket": "safestreets-e31ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750369860383:android:9fa4c157775374ff70de2a",
+        "android_client_info": {
+          "package_name": "com.example.safestreets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750369860383-cbu1t7katep2eu2o23ptgp10igu5sqjh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.safestreets",
+            "certificate_hash": "9a1a95d608b04a8b502900ec0d735aeb79bcdc39"
+          }
+        },
+        {
+          "client_id": "750369860383-87lq9l2e3qdi1n2p2bge5uvv0fgeipvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7V-QIHHOk2gUY1hUXP-KoebWyp1ZpTqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750369860383-87lq9l2e3qdi1n2p2bge5uvv0fgeipvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
