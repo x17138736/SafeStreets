@@ -12,6 +12,7 @@ public class Settings extends AppCompatActivity {
     private Button Contacts;
     private Button TermsOfService;
     private Button SignOut;
+    private Button About;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class Settings extends AppCompatActivity {
         Contacts = (Button) findViewById(R.id.btnContactsPage);
         TermsOfService = (Button) findViewById(R.id.btnToS);
         SignOut = (Button) findViewById(R.id.btnSignOut);
+        About = (Button) findViewById(R .id.btnAbout);
 
         Contacts.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +42,13 @@ public class Settings extends AppCompatActivity {
                 openMainActivity();
             }
         });
+        About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAbout();
+            }
+        });
+
     }
 
     public void openContacts() {
@@ -54,6 +63,11 @@ public class Settings extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    public void openAbout() {
+        Intent intent = new Intent(this, about.class);
+        startActivity(intent);
+    }
+
 
 
 
