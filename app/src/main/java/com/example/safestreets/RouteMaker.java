@@ -132,8 +132,6 @@ public class RouteMaker extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -146,6 +144,7 @@ public class RouteMaker extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap=googleMap;
+
 
         // Add a marker in Sydney and move the camera
         //LatLng dublin=new LatLng(53.349530, -6.260114);

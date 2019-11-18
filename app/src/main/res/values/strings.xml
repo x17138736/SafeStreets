@@ -9,6 +9,7 @@
     <string name="no_of_incorrect_attempts">No of incorrect attempts:</string>
     <string name="signup">SignUp</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="directionsApiKey" />
 
 
 </resources>
