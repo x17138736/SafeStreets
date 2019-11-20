@@ -54,5 +54,7 @@ dependencies {
     implementation 'com.google.maps:google-maps-services:0.1.20'
 }
 
-
-
+dependencies {
+    implementation 'androidx.appcompat:appcompat:+'
+    implementation 'androidx.constraintlayout:constraintlayout:+'
+}

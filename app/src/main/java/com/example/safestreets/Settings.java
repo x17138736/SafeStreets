@@ -39,7 +39,7 @@ public class Settings extends AppCompatActivity {
         SignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMainActivity();
+                openSignedOut();
             }
         });
         About.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +59,8 @@ public class Settings extends AppCompatActivity {
         Intent intent = new Intent(this, TermsOfService.class);
         startActivity(intent);
     }
-    public void openMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+    public void openSignedOut() {
+        Intent intent = new Intent(this, SignedOut.class);
         startActivity(intent);
     }
     public void openAbout() {
