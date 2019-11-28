@@ -18,7 +18,7 @@ public class SecondActivity extends AppCompatActivity {
     private Button Settings;
     private TextView Info1;
     private FirebaseAuth firebaseAuth;
-    private Button logout;
+
 
 
     @Override
@@ -30,7 +30,7 @@ public class SecondActivity extends AppCompatActivity {
         RouteMaker=(Button) findViewById(R.id.btnRouteMaker);
         Forum=(Button) findViewById(R.id.btnForum);
         Settings=(Button) findViewById(R.id.btnSettings);
-        logout=(Button) findViewById(R.id.btnLogout);
+
 
         SafeStreetMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,12 +62,7 @@ public class SecondActivity extends AppCompatActivity {
 
         firebaseAuth=FirebaseAuth.getInstance();
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Logout();
-            }
-        });
+
     }
 
         private void openSafeStreetMap () {
@@ -93,15 +88,7 @@ public class SecondActivity extends AppCompatActivity {
 
         }
 
-        private void Logout () {
-            firebaseAuth.signOut();
-            finish();
-            startActivity(new Intent(SecondActivity.this, MainActivity.class));
 
-            Info1=(TextView) findViewById(R.id.tvInfo1);
-
-
-        }
     }
 
 

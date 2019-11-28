@@ -4,21 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Contacts">
+    tools:context=".Contacts"
+    android:background="@drawable/backgroundgradient">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="92dp"
-        android:layout_height="32dp"
-        android:text="CONTACT US"
+        android:id="@+id/textViewContacts"
+        android:layout_width="367dp"
+        android:layout_height="688dp"
+        android:background="@android:color/transparent"
+        android:paddingLeft="70px"
+        android:paddingTop="300px"
+        android:paddingRight="70px"
+        android:paddingBottom="300px"
+        android:text="Owen - x1751666@student.ncirl.ie \n \n Sam - x17449342@student.ncirl.ie\n\n Cristian - x17138736@student.ncirl.ie\n\n Oscar - x17363253@student.ncirl.ie"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/rounded_button"
+        android:text="Settings"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewContacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

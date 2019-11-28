@@ -7,16 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Contacts extends AppCompatActivity {
-
+public class about extends AppCompatActivity {
     private Button Settings;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contacts);
+        setContentView(R.layout.activity_about);
 
-        Settings = (Button) findViewById(R.id.btnBack);
+
+
+
+        Settings = (Button) findViewById(R.id.btnBack3);
         Settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,3 +32,4 @@ public class Contacts extends AppCompatActivity {
         startActivity(intent);
     }
 }
+
