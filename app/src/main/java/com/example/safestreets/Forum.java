@@ -72,7 +72,10 @@ public class Forum extends AppCompatActivity {
                     resultInput2.setText("Email: "+email);
                     resultInput3.setText("Street Name: "+streetName );
                     resultInput4.setText("Experience: "+experience);
-
+                    nameInput.setText("");
+                    emailInput.setText("");
+                    streetNameInput.setText("");
+                    experienceInput.setText("");
                 }
             });
 
