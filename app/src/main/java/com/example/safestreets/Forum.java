@@ -2,6 +2,7 @@ package com.example.safestreets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Person;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,84 +10,144 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 import java.util.jar.Attributes;
 
 public class Forum extends AppCompatActivity {
 
 
-        String name;
-        String email;
-        String streetName;
-        String experience;
-        String result;
-        String result2;
-        String result3;
-        String result4;
+    EditText nameInput, emailInput, streetnameInput, experienceInput;
+    Button submitBTN, btnSave;
+    TextView tvData;
 
-        EditText nameInput;
-        EditText emailInput;
-        EditText streetNameInput;
-        EditText experienceInput;
-    EditText resultInput;
-    EditText resultInput2;
-    EditText resultInput3;
-    EditText resultInput4;
-        Button submitBTN;
+    ArrayList<ForumInputs> people;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_forum);
 
+        nameInput = findViewById(R.id.nameInput);
+        emailInput = findViewById(R.id.emailInput);
+        streetnameInput = findViewById(R.id.streetnameInput);
+         experienceInput= findViewById(R.id.experienceInput);
+         submitBTN= findViewById(R.id.submitBTN);
+         btnSave= findViewById(R.id.btnSave);
+         tvData= findViewById(R.id.tvData);
 
 
+         people = new ArrayList<ForumInputs>();
 
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_forum);
+         loadData();
 
-            nameInput = (EditText) findViewById(R.id.nameInput);
-            emailInput = (EditText) findViewById(R.id.emailInput);
-            streetNameInput = (EditText) findViewById(R.id.streetnameInput);
-            experienceInput = (EditText) findViewById(R.id.experienceInput);
-            resultInput = (EditText) findViewById(R.id.resultInput);
-            resultInput2 = (EditText) findViewById(R.id.resultInput2);
-            resultInput3 = (EditText) findViewById(R.id.resultInput3);
-            resultInput4 = (EditText) findViewById(R.id.resultInput4);
-            submitBTN = (Button) findViewById(R.id.submitBTN);
-            submitBTN.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    name = nameInput.getText().toString();
-                    email = emailInput.getText().toString();
-                    streetName = streetNameInput.getText().toString();
-                    experience = experienceInput.getText().toString();
-                    result = resultInput.getText().toString();
-                    result2 = resultInput2.getText().toString();
-                    result3 = resultInput3.getText().toString();
-                    result4 = resultInput4.getText().toString();
+         submitBTN.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
 
-                   // showToast(name);
-                   // showToast(email);
-                    //showToast(streetName);
-                   // showToast(experience);
-                    resultInput.setText("Name: "+name );
-                    resultInput2.setText("Email: "+email);
-                    resultInput3.setText("Street Name: "+streetName );
-                    resultInput4.setText("Experience: "+experience);
-                    nameInput.setText("");
-                    emailInput.setText("");
-                    streetNameInput.setText("");
-                    experienceInput.setText("");
-                }
-            });
+                 if (nameInput.getText().toString().isEmpty() ||
+                    emailInput.getText().toString().isEmpty() ||
+                    streetnameInput.getText().toString().isEmpty() ||
+                 experienceInput.getText().toString().isEmpty())
+                 {
+                     Toast.makeText(Forum.this, "Please enter details in all fields", Toast.LENGTH_SHORT).show();
+                 }
+                 else{
+                     ForumInputs forumInputs = new ForumInputs(nameInput.getText().toString().trim(),
+                             emailInput.getText().toString().trim(), streetnameInput.getText().toString().trim(),
+                             experienceInput.getText().toString().trim());
+                     people.add(forumInputs);
 
+                     setTextToTextView();
+                 }
+             }
+         });
+         btnSave.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
 
-        }
+                 try{
+                     FileOutputStream file = openFileOutput("Data.txt", MODE_PRIVATE); //connection to the file
+                     OutputStreamWriter outputFile = new OutputStreamWriter(file);//writes to the file
 
-       // private void showToast(String text){
-         //   Toast.makeText(Forum.this, text, Toast.LENGTH_SHORT).show();
-      //  }
+                     for(int i =0; i<people.size();i++){
+                         outputFile.write(people.get(i).getName()+"\n"+ people.get(i).getEmail() + "\n"+
+                         people.get(i).getStreetname() +"\n"+people.get(i).getExperience()+"\n");
+                     }
+
+                     outputFile.flush(); //make sure all is written to the file
+                     outputFile.close(); //then close it
+
+                     Toast.makeText(Forum.this, "Inputs written to file!", Toast.LENGTH_SHORT).show();
+                 }
+                 catch (IOException e)
+                 {
+                     Toast.makeText(Forum.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                 }
+             }
+         });
+
 
     }
-// reference  https://www.youtube.com/watch?v=V0AETAjxqLI
+
+    private void loadData() {
+
+        people.clear();
+
+        File file = getApplicationContext().getFileStreamPath("Data.txt"); //checking if the file exits
+
+        String lineFromFile;
+
+        if(file.exists()) {
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(openFileInput("Data.txt")));// the open stream reader will allow us to open the data file
+
+
+                while((lineFromFile = reader.readLine()) != null)                                                    // reading the line from the data file, then saves into the Line fromFile, making sure its not null
+                {
+                    StringTokenizer tokens = new StringTokenizer(lineFromFile,"\n");                          // helps us get tokens from a string
+
+                    ForumInputs forumInputs = new ForumInputs(tokens.nextToken(), tokens.nextToken(),
+                            tokens.nextToken(),tokens.nextToken());
+                    people.add(forumInputs);
+            }
+
+                reader.close();
+                setTextToTextView();
+        }
+            catch (IOException e){
+
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        }
+        else{
+
+            Toast.makeText(this, "No data to show that is in the database", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void setTextToTextView() {
+
+
+        String text ="";
+
+        for(int i =0; i < people.size(); i++){
+            text = text + people.get(i).getName()+"\n"+people.get(i).getEmail() +"\n" +
+                    people.get(i).getStreetname()+"\n"+people.get(i).getExperience() +"\n";
+        }
+        tvData.setText(text);
+
+    }
+}
+// reference https://www.youtube.com/watch?v=bMribUyNPBo  https://www.youtube.com/watch?v=V0AETAjxqLI
 
 
