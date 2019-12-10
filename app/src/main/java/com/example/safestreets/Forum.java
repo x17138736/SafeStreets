@@ -60,10 +60,10 @@ public class Forum extends AppCompatActivity {
                      Toast.makeText(Forum.this, "Please enter details in all fields", Toast.LENGTH_SHORT).show();
                  }
                  else{
-                     ForumInputs forumInputs = new ForumInputs(nameInput.getText().toString().trim(),
+                     ForumInputs forumInputss = new ForumInputs(nameInput.getText().toString().trim(),
                              emailInput.getText().toString().trim(), streetnameInput.getText().toString().trim(),
                              experienceInput.getText().toString().trim());
-                     people.add(forumInputs);
+                     people.add(forumInputss);
 
                      setTextToTextView();
                  }
@@ -78,8 +78,8 @@ public class Forum extends AppCompatActivity {
                      OutputStreamWriter outputFile = new OutputStreamWriter(file);//writes to the file
 
                      for(int i =0; i<people.size();i++){
-                         outputFile.write(people.get(i).getName()+"\n"+ people.get(i).getEmail() + "\n"+
-                         people.get(i).getStreetname() +"\n"+people.get(i).getExperience()+"\n");
+                         outputFile.write(people.get(i).getName()+","+ people.get(i).getEmail() + ","+
+                         people.get(i).getStreetname() +","+people.get(i).getExperience()+"\n");
                      }
 
                      outputFile.flush(); //make sure all is written to the file
@@ -112,12 +112,12 @@ public class Forum extends AppCompatActivity {
 
                 while((lineFromFile = reader.readLine()) != null)                                                    // reading the line from the data file, then saves into the Line fromFile, making sure its not null
                 {
-                    StringTokenizer tokens = new StringTokenizer(lineFromFile,"\n");                          // helps us get tokens from a string
+                    StringTokenizer tokens = new StringTokenizer(lineFromFile,",");                          // helps us get tokens from a string
 
-                    ForumInputs forumInputs = new ForumInputs(tokens.nextToken(), tokens.nextToken(),
+                    ForumInputs forumInputss = new ForumInputs(tokens.nextToken(), tokens.nextToken(),
                             tokens.nextToken(),tokens.nextToken());
-                    people.add(forumInputs);
-            }
+                    people.add(forumInputss);
+                }
 
                 reader.close();
                 setTextToTextView();
